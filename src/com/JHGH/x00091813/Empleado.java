@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 abstract public class Empleado {
     //atributos
+
     protected String nombre;
     protected String puesto;
     protected ArrayList<Documento> documentos;
     protected double salario;
 
     //constructores
+
     public Empleado(String nombre, String puesto, double salario) {
         this.nombre = nombre;
         this.puesto = puesto;
@@ -17,6 +19,7 @@ abstract public class Empleado {
     }
 
     //getters
+
     public String getNombre() {
         return nombre;
     }
@@ -34,16 +37,18 @@ abstract public class Empleado {
     }
 
     //setters
+
     public void setSalario(double salario) {
         this.salario = salario;
     }
 
     //metodos
-    void addDocumento(Documento documento) {
+
+    public void addDocumento(Documento doc) {
 
     }
 
-    void removeDocumento(String documento) {
+    public void removeDocumento(String docName) {
 
     }
 }
