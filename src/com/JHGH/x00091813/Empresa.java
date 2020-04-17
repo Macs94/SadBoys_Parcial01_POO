@@ -2,7 +2,7 @@ package com.JHGH.x00091813;
 
 import java.util.ArrayList;
 
-public class Empresa extends Empleado {
+public class Empresa {
     //atributos
 
     private String nombre;
@@ -10,14 +10,12 @@ public class Empresa extends Empleado {
 
     //constructores
 
-    public Empresa(String nombre, String puesto, double salario, String nombre1) {
-        super(nombre, puesto, salario);
-        this.nombre = nombre1;
+    public Empresa(String nombre) {
+        this.nombre = nombre;
     }
 
     //getters
 
-    @Override
     public String getNombre() {
         return nombre;
     }

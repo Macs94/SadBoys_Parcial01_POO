@@ -1,6 +1,6 @@
 package com.JHGH.x00091813;
 
-public class Documento extends Empleado {
+public class Documento {
     //atributos
 
     private String nombre;
@@ -8,15 +8,13 @@ public class Documento extends Empleado {
 
     //constructores
 
-    public Documento(String nombre, String puesto, double salario, String nombre1, String numero) {
-        super(nombre, puesto, salario);
-        this.nombre = nombre1;
+    public Documento(String nombre, String numero) {
+        this.nombre = nombre;
         this.numero = numero;
     }
 
     //getters
 
-    @Override
     public String getNombre() {
         return nombre;
     }
