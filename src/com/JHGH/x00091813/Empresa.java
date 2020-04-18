@@ -13,6 +13,7 @@ public class Empresa {
 
     public Empresa(String nombre) {
         this.nombre = nombre;
+        this.planilla = new ArrayList<>();
     }
 
     //getters
@@ -28,7 +29,7 @@ public class Empresa {
     //metodos
 
     public void addEmpleado(Empleado employee) {
-        planilla.add(employee);
+        this.planilla.add(employee);
     }
 
     public void quitEmpleado(String employeeName) {
