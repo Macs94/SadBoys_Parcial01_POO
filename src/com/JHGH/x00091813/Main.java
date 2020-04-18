@@ -1,6 +1,7 @@
 package com.JHGH.x00091813;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -23,6 +24,7 @@ public class Main {
                 case 2:
                     break;
                 case 3:
+                    verEmpleados(business);
                     break;
                 case 4:
                     break;
@@ -92,10 +94,12 @@ public class Main {
                     mesesContrato = Integer.parseInt(JOptionPane.showInputDialog(null, "Meses de contrato:"));
                     if (mesesContrato < 0)
                         throw new OutOfRangeException("Los meses de contrato no pueden ser negativos.");
-                } catch (OutOfRangeException ex) {
+                }
+                catch (OutOfRangeException ex) {
                     JOptionPane.showMessageDialog(null, ex);
                     loop = true;
-                } catch (IllegalArgumentException ex) {
+                }
+                catch (IllegalArgumentException ex) {
                     JOptionPane.showMessageDialog(null, ex);
                     loop = true;
                 }
@@ -110,15 +114,22 @@ public class Main {
                     extension = Integer.parseInt(JOptionPane.showInputDialog(null, "Extension:"));
                     if (extension < 0)
                         throw new OutOfRangeException("La extension no puede ser negativa.");
-                } catch (OutOfRangeException ex) {
+                }
+                catch (OutOfRangeException ex) {
                     JOptionPane.showMessageDialog(null, ex);
                     loop = true;
-                } catch (IllegalArgumentException ex) {
+                }
+                catch (IllegalArgumentException ex) {
                     JOptionPane.showMessageDialog(null, ex);
                     loop = true;
                 }
             }
             return new PlazaFija(nombre, puesto, salario, extension);
         }
+    }
+
+    public static void verEmpleados(Empresa business) {
+        ArrayList<Empleado> listaEmpleados = business.getPlanilla();
+        listaEmpleados.forEach(obj -> JOptionPane.showMessageDialog(null, obj.toString()));
     }
 }
