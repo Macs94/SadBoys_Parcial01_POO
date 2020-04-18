@@ -1,5 +1,6 @@
 package com.JHGH.x00091813;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Empresa {

@@ -1,10 +1,16 @@
 package com.JHGH.x00091813;
 
 public final class CalculadoraImpuestos {
+    //atributos
+
     private static double totalRenta,totalISSS,totalAFP;
-    //Constructor privado
+
+    //constructor privado
+
     private CalculadoraImpuestos() {}
-    //Methods
+
+    //metodos
+
     public static double calcularPago(Empleado employee){
         double montoPago = 0.00;
         return montoPago;
