@@ -1,5 +1,7 @@
 package com.JHGH.x00091813;
 
+import javax.print.Doc;
+import javax.swing.*;
 import java.util.ArrayList;
 
 abstract public class Empleado {
@@ -16,6 +18,7 @@ abstract public class Empleado {
         this.nombre = nombre;
         this.puesto = puesto;
         this.salario = salario;
+        this.documentos = new ArrayList<>();
     }
 
     //getters
@@ -54,11 +57,33 @@ abstract public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" +
-                "nombre='" + nombre + '\'' +
-                ", puesto='" + puesto + '\'' +
-                ", documentos=" + documentos +
-                ", salario=" + salario +
-                '}';
+        if (documentos.isEmpty()) {
+            return "Empleado{" +
+                    "nombre='" + nombre + '\'' +
+                    ", puesto='" + puesto + '\'' +
+                    ", salario=" + salario +
+                    '}';
+        } else if (documentos.size() == 1) {
+            return "Empleado{" +
+                    "nombre='" + nombre + '\'' +
+                    ", puesto='" + puesto + '\'' +
+                    ", salario=" + salario + '\'' +
+                    ", documentos= \n(1)nombre='" + this.documentos.get(0).getNombre() + '\'' +
+                    ", numero='" + this.documentos.get(0).getNumero() + '\'' + '}' +
+                    "\n..............."
+                    ;
+        } else {
+            return "Empleado{" +
+                    "nombre='" + nombre + '\'' +
+                    ", puesto='" + puesto + '\'' +
+                    ", salario=" + salario + '\'' +
+                    ", documentos= \n(1)nombre='" + this.documentos.get(0).getNombre() + '\'' +
+                    ", numero='" + this.documentos.get(0).getNumero() + '\'' +
+                    ", (2)nombre='" + this.documentos.get(1).getNombre() + '\'' +
+                    ", numero='" + this.documentos.get(1).getNumero() + '\'' + '}' +
+                    "\n..............."
+                    ;
+        }
     }
 }
+

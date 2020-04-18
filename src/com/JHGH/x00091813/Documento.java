@@ -22,4 +22,12 @@ public class Documento {
     public String getNumero() {
         return numero;
     }
+
+    @Override
+    public String toString() {
+        return "Documento{" +
+                "nombre='" + nombre + '\'' +
+                ", numero='" + numero + '\'' +
+                '}';
+    }
 }

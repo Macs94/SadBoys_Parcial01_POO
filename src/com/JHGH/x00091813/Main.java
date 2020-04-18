@@ -22,6 +22,8 @@ public class Main {
                     business.addEmpleado(inputEmpleado());
                     break;
                 case 2:
+                    String despedido = JOptionPane.showInputDialog(null,"Nombre del empleado a despedir:");
+                    business.quitEmpleado(despedido);
                     break;
                 case 3:
                     verEmpleados(business);
@@ -38,8 +40,8 @@ public class Main {
         int x = 0;
         try {
             x = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "MENU:\n1) Agregar empleado\n2) Despedir empleado\n3) Ver lista de empleados\n" +
-                            "4) Calcular sueldo\n5) Mostrar totales\n6) SALIR"));
+                    "MENU:\n(1) Agregar empleado\n(2) Despedir empleado\n(3) Ver lista de empleados\n" +
+                            "(4) Calcular sueldo\n(5) Mostrar totales\n(6) SALIR"));
         }
         catch (IllegalArgumentException ex) {}
         return x;
@@ -52,7 +54,7 @@ public class Main {
             try {
                 loop = false;
                 x = Integer.parseInt(JOptionPane.showInputDialog(null,
-                        "(1)Servicio profesional     o    (2)Plaza fija     "));
+                        "(1)Servicio profesional            (2)Plaza fija     "));
                 if (x != 1 && x != 2)
                     throw new OutOfRangeException("Esa opcion no existe.");
             }
@@ -129,6 +131,9 @@ public class Main {
     }
 
     public static void verEmpleados(Empresa business) {
-        business.getPlanilla().forEach(obj -> JOptionPane.showMessageDialog(null, obj.toString()));
+        if (!business.getPlanilla().isEmpty())
+            business.getPlanilla().forEach(obj -> JOptionPane.showMessageDialog(null, obj.toString()));
+        else
+            JOptionPane.showMessageDialog(null, "No hay empleados en la lista.");
     }
 }
