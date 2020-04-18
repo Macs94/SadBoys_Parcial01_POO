@@ -129,7 +129,6 @@ public class Main {
     }
 
     public static void verEmpleados(Empresa business) {
-        ArrayList<Empleado> listaEmpleados = business.getPlanilla();
-        listaEmpleados.forEach(obj -> JOptionPane.showMessageDialog(null, obj.toString()));
+        business.getPlanilla().forEach(obj -> JOptionPane.showMessageDialog(null, obj.toString()));
     }
 }
