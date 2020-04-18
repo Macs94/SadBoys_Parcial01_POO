@@ -45,7 +45,7 @@ abstract public class Empleado {
     //metodos
 
     public void addDocumento(Documento doc) {
-
+        this.documentos.add(doc);
     }
 
     public void removeDocumento(String docName) {
