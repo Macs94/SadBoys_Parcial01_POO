@@ -22,9 +22,14 @@ public class Main {
                     business.addEmpleado(inputEmpleado());
                     break;
                 case 2:
-                    String despedido = JOptionPane.showInputDialog(null,"Nombre del empleado a despedir:");
-                    business.quitEmpleado(despedido);
+                    String despedido="";
+                    if(business.getPlanilla().isEmpty())
+                        JOptionPane.showMessageDialog(null,"La lista de empleados esta vacía.");
+                    else
+                        despedido = JOptionPane.showInputDialog(null,"Nombre del empleado a despedir:");
+                        business.quitEmpleado(despedido);
                     break;
+
                 case 3:
                     verEmpleados(business);
                     break;

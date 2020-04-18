@@ -58,12 +58,17 @@ public class Empresa {
     }
 
     public void quitEmpleado(String employeeName) {
-        if(planilla.isEmpty())
-            JOptionPane.showMessageDialog(null,"No hay empleados que despedir.");
-        else{
-            planilla.removeIf(obj->obj.nombre.equals(employeeName));
-            JOptionPane.showMessageDialog(null,"Empleado despedido . . .");
+        for (int i = 0; i < planilla.size(); i++) {
+            if (planilla.get(i).getNombre().equalsIgnoreCase(employeeName)) {
+
+                JOptionPane.showMessageDialog(null,"Empleado a despedir\n" + planilla.remove(i));
+            }
+            else
+                JOptionPane.showMessageDialog(null,"No se encontro el empleado.");
+
         }
+
 
     }
 }
+
