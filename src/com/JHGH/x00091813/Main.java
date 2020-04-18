@@ -103,14 +103,13 @@ public class Main {
             return new ServicioProfesional(nombre, puesto, salario, mesesContrato);
         }
         else {
-            loop = true;
             int extension = 0;
             while (loop) {
                 try {
                     loop = false;
                     extension = Integer.parseInt(JOptionPane.showInputDialog(null, "Extension:"));
                     if (extension < 0)
-                        throw new OutOfRangeException("Esa opcion no existe.");
+                        throw new OutOfRangeException("La extension no puede ser negativa.");
                 } catch (OutOfRangeException ex) {
                     JOptionPane.showMessageDialog(null, ex);
                     loop = true;
