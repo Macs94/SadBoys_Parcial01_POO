@@ -28,7 +28,7 @@ public class Empresa {
     //metodos
 
     public void addEmpleado(Empleado employee) {
-
+        planilla.add(employee);
     }
 
     public void quitEmpleado(String employeeName) {
