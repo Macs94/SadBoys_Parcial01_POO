@@ -33,6 +33,12 @@ public class Empresa {
     }
 
     public void quitEmpleado(String employeeName) {
+        if(planilla.isEmpty())
+            JOptionPane.showMessageDialog(null,"No hay empleados que despedir.");
+        else{
+            planilla.removeIf(obj->obj.nombre.equals(employeeName));
+            JOptionPane.showMessageDialog(null,"Empleado despedido . . .");
+        }
 
     }
 }

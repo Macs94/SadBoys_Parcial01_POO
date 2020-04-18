@@ -22,6 +22,8 @@ public class Main {
                     business.addEmpleado(inputEmpleado());
                     break;
                 case 2:
+                    String despedido = JOptionPane.showInputDialog(null,"Nombre del empleado a despedir:");
+                    business.quitEmpleado(despedido);
                     break;
                 case 3:
                     verEmpleados(business);
@@ -129,7 +131,7 @@ public class Main {
     }
 
     public static void verEmpleados(Empresa business) {
-        ArrayList<Empleado> listaEmpleados = business.getPlanilla();
-        listaEmpleados.forEach(obj -> JOptionPane.showMessageDialog(null, obj.toString()));
+        business.getPlanilla().forEach(obj -> JOptionPane.showMessageDialog(null, obj.toString()));
+
     }
 }
