@@ -61,7 +61,7 @@ public class Empresa {
         for (int i = 0; i < planilla.size(); i++) {
             if (planilla.get(i).getNombre().equalsIgnoreCase(employeeName)) {
 
-                JOptionPane.showMessageDialog(null,"Empleado a despedir\n" + planilla.remove(i));
+                JOptionPane.showMessageDialog(null,"Empleado a despedir:\n" + planilla.remove(i));
             }
             else
                 JOptionPane.showMessageDialog(null,"No se encontro el empleado.");

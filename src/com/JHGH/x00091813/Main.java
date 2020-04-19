@@ -22,18 +22,14 @@ public class Main {
                     business.addEmpleado(inputEmpleado());
                     break;
                 case 2:
-                    String despedido="";
-                    if(business.getPlanilla().isEmpty())
-                        JOptionPane.showMessageDialog(null,"La lista de empleados esta vacía.");
-                    else
-                        despedido = JOptionPane.showInputDialog(null,"Nombre del empleado a despedir:");
-                        business.quitEmpleado(despedido);
+                    despedirEmpleado(business);
                     break;
 
                 case 3:
                     verEmpleados(business);
                     break;
                 case 4:
+
                     break;
                 case 5:
                     break;
@@ -140,5 +136,16 @@ public class Main {
             business.getPlanilla().forEach(obj -> JOptionPane.showMessageDialog(null, obj.toString()));
         else
             JOptionPane.showMessageDialog(null, "No hay empleados en la lista.");
+    }
+    public static void calcularSueldo(Empresa business){
+    }
+    public static void despedirEmpleado(Empresa business){
+        String despedido="";
+        if(business.getPlanilla().isEmpty())
+            JOptionPane.showMessageDialog(null,"La lista de empleados esta vacía.");
+        else
+            despedido = JOptionPane.showInputDialog(null,"Nombre del empleado a despedir:");
+            business.quitEmpleado(despedido);
+
     }
 }
