@@ -180,8 +180,9 @@ public class Main {
         String despedido="";
         if(business.getPlanilla().isEmpty())
             JOptionPane.showMessageDialog(null,"La lista de empleados esta vacía.");
-        else
-            despedido = JOptionPane.showInputDialog(null,"Nombre del empleado a despedir:");
+        else {
+            despedido = JOptionPane.showInputDialog(null, "Nombre del empleado a despedir:");
             business.quitEmpleado(despedido);
+        }
     }
 }
