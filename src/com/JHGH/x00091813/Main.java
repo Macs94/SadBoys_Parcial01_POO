@@ -29,7 +29,7 @@ public class Main {
                     verEmpleados(business);
                     break;
                 case 4:
-
+                    calcularSueldo(business);
                     break;
                 case 5:
                     break;
@@ -138,6 +138,18 @@ public class Main {
             JOptionPane.showMessageDialog(null, "No hay empleados en la lista.");
     }
     public static void calcularSueldo(Empresa business){
+        String employee="";
+        if(business.getPlanilla().isEmpty())
+            JOptionPane.showMessageDialog(null,"La lista de empleados esta vacía");
+        else {
+            employee = JOptionPane.showInputDialog(null,"Nombre del empleado a calcular su sueldo:");
+            for (int i = 0; i < business.getPlanilla().size(); i++) {
+                if (business.getPlanilla().get(i).getNombre().equalsIgnoreCase(employee))
+                    JOptionPane.showMessageDialog(null,"Su sueldo despues de descuentos es: "
+                            +CalculadoraImpuestos.calcularPago(business.getPlanilla().get(i)));
+
+            }
+        }
     }
     public static void despedirEmpleado(Empresa business){
         String despedido="";
