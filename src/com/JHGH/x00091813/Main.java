@@ -2,6 +2,7 @@ package com.JHGH.x00091813;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.text.DecimalFormat;
 
 public class Main {
 
@@ -140,6 +141,7 @@ public class Main {
     }
     public static void calcularSueldo(Empresa business){
         String employee="";
+        DecimalFormat dec = new DecimalFormat("#0.00");
         if(business.getPlanilla().isEmpty())
             JOptionPane.showMessageDialog(null,"La lista de empleados esta vacía");
         else {
@@ -147,7 +149,10 @@ public class Main {
             for (int i = 0; i < business.getPlanilla().size(); i++) {
                 if (business.getPlanilla().get(i).getNombre().equalsIgnoreCase(employee))
                     JOptionPane.showMessageDialog(null,"Su sueldo despues de descuentos es: "
-                            +CalculadoraImpuestos.calcularPago(business.getPlanilla().get(i)));
+                            +dec.format(CalculadoraImpuestos.calcularPago(business.getPlanilla().get(i))));
+                else{
+                    JOptionPane.showMessageDialog(null,"No se encontro el empleado.");
+                }
 
             }
         }

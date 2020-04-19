@@ -1,7 +1,7 @@
 package com.JHGH.x00091813;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 
 public final class CalculadoraImpuestos {
     //atributos
@@ -47,6 +47,7 @@ public final class CalculadoraImpuestos {
     }
 
     public static String mostrarTotales(){
-        return "Total Renta: "+totalRenta+"\nTotal ISSS: "+totalISSS+"\nTotal AFP: "+totalAFP;
+        DecimalFormat dec = new DecimalFormat("#0.00");
+        return "Total Renta: "+dec.format(totalRenta)+"\nTotal ISSS: "+dec.format(totalISSS)+"\nTotal AFP: "+dec.format(totalAFP);
     }
 }
