@@ -149,7 +149,7 @@ public class Main {
             for (int i = 0; i < business.getPlanilla().size(); i++) {
                 if (business.getPlanilla().get(i).getNombre().equalsIgnoreCase(employee))
                     JOptionPane.showMessageDialog(null,"Su sueldo despues de descuentos es: "
-                            +dec.format(CalculadoraImpuestos.calcularPago(business.getPlanilla().get(i))));
+                            +dec.format(CalculadoraImpuestos.calcularPago(business.getPlanilla().get(i)))+" USD.");
                 else{
                     JOptionPane.showMessageDialog(null,"No se encontro el empleado.");
                 }
