@@ -58,31 +58,21 @@ abstract public class Empleado {
     @Override
     public String toString() {
         if (documentos.isEmpty()) {
-            return "Empleado{" +
-                    "nombre='" + nombre + '\'' +
-                    ", puesto='" + puesto + '\'' +
-                    ", salario=" + salario +
-                    '}';
+            return "Nombre: " + nombre +
+                    ", Puesto: " + puesto +
+                    ", Salario: " + salario+" USD";
         } else if (documentos.size() == 1) {
-            return "Empleado{" +
-                    "nombre='" + nombre + '\'' +
-                    ", puesto='" + puesto + '\'' +
-                    ", salario=" + salario + '\'' +
-                    ", documentos= \n(1)nombre='" + this.documentos.get(0).getNombre() + '\'' +
-                    ", numero='" + this.documentos.get(0).getNumero() + '\'' + '}' +
-                    "\n..............."
-                    ;
+            return "Nombre: " + nombre +
+                    ",Puesto: " + puesto +
+                    ", Salario: " + salario +" USD"+
+                    "\nDocumento:\n(1)" + this.documentos.get(0).getNombre() +"-" + this.documentos.get(0).getNumero();
         } else {
-            return "Empleado{" +
-                    "nombre='" + nombre + '\'' +
-                    ", puesto='" + puesto + '\'' +
-                    ", salario=" + salario + '\'' +
-                    ", documentos= \n(1)nombre='" + this.documentos.get(0).getNombre() + '\'' +
-                    ", numero='" + this.documentos.get(0).getNumero() + '\'' +
-                    ", (2)nombre='" + this.documentos.get(1).getNombre() + '\'' +
-                    ", numero='" + this.documentos.get(1).getNumero() + '\'' + '}' +
-                    "\n..............."
-                    ;
+            return "Nombre: " + nombre +
+                    ",Puesto: " + puesto +
+                    ", Salario: " + salario +" USD"+
+                    "\nDocumentos:\n(1)" + this.documentos.get(0).getNombre() +"-" + this.documentos.get(0).getNumero() +
+                    "\n(2)" + this.documentos.get(1).getNombre() +"-" + this.documentos.get(1).getNumero()+
+                    "\n.............";
         }
     }
 }

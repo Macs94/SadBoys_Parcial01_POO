@@ -49,6 +49,7 @@ public final class CalculadoraImpuestos {
 
     public static String mostrarTotales(){
         DecimalFormat dec = new DecimalFormat("#0.00");
-        return "Total Renta: "+dec.format(totalRenta)+"\nTotal ISSS: "+dec.format(totalISSS)+"\nTotal AFP: "+dec.format(totalAFP);
+        return "Descuentos efectuados en total por institución: "+"\nTotal Renta: "+dec.format(totalRenta)+" USD."+"\nTotal ISSS: "+dec.format(totalISSS)+" USD."+
+                "\nTotal AFP: "+dec.format(totalAFP)+"USD.";
     }
 }
