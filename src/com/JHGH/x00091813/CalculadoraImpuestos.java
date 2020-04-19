@@ -15,12 +15,14 @@ public final class CalculadoraImpuestos {
     //metodos
 
     public static double calcularPago(Empleado employee){
-        double montoPago = 0.00,renta=0.00,ISSS=0.00,AFP=0.00;
+        double montoPago =0.00,renta=0.00,ISSS=0.00,AFP=0.00;
         double salario = employee.getSalario();
+        double restante;
+
         if(employee instanceof PlazaFija){
             AFP = 0.0625*salario;
             ISSS = 0.03*salario;
-            double restante = salario-totalAFP-totalISSS;
+            restante=salario-AFP-ISSS;
             if(restante>=0.01 && restante<=472.00){
                 renta = 0.00;
             }
@@ -34,7 +36,6 @@ public final class CalculadoraImpuestos {
                 renta = 0.3*(restante-2038.10)+288.57;
             }
            montoPago = restante - renta;
-
         }
         else if (employee instanceof ServicioProfesional){
             renta = 0.1*salario;
