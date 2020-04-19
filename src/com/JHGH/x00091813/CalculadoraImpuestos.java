@@ -1,9 +1,12 @@
 package com.JHGH.x00091813;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public final class CalculadoraImpuestos {
     //atributos
 
-    private static double totalRenta,totalISSS,totalAFP;
+    private static double totalRenta=0.00,totalISSS=0.00,totalAFP=0.00;
 
     //constructor privado
 
@@ -12,31 +15,34 @@ public final class CalculadoraImpuestos {
     //metodos
 
     public static double calcularPago(Empleado employee){
-        double montoPago = 0.00;
+        double montoPago = 0.00,renta=0.00,ISSS=0.00,AFP=0.00;
         double salario = employee.getSalario();
         if(employee instanceof PlazaFija){
-            totalAFP = 0.0625*salario;
-            totalISSS = 0.03*salario;
+            AFP = 0.0625*salario;
+            ISSS = 0.03*salario;
             double restante = salario-totalAFP-totalISSS;
             if(restante>=0.01 && restante<=472.00){
-                totalRenta = 0.00;
+                renta = 0.00;
             }
             else if(restante>=472.01 && restante<=895.24){
-                totalRenta = 0.1*(restante-472)+17.67;
+                renta = 0.1*(restante-472)+17.67;
             }
             else if(restante>=895.25 && restante<=2038.10){
-                totalRenta = 0.2*(restante-895.24)+60;
+                renta = 0.2*(restante-895.24)+60;
             }
             else if(restante>=2038.11){
-                totalRenta = 0.3*(restante-2038.10)+288.57;
+                renta = 0.3*(restante-2038.10)+288.57;
             }
-           montoPago = restante - totalRenta;
+           montoPago = restante - renta;
 
         }
         else if (employee instanceof ServicioProfesional){
-            totalRenta = 0.1*salario;
-            montoPago = salario - totalRenta;
+            renta = 0.1*salario;
+            montoPago = salario - renta;
         }
+        totalRenta+=renta;
+        totalISSS+=ISSS;
+        totalAFP+=AFP;
         return montoPago;
     }
 

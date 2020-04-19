@@ -32,6 +32,7 @@ public class Main {
                     calcularSueldo(business);
                     break;
                 case 5:
+                    JOptionPane.showMessageDialog(null,CalculadoraImpuestos.mostrarTotales());
                     break;
             }
         } while (menuChoice != 6);
